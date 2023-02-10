@@ -21,12 +21,12 @@ services:
       - DB_PASS=password
     depends_on:
       - db
-
   db:
     image: postgres:13-alpine
-#    hostname: postgres
-#    volumes:
-#      - dev-db-data:/var/lib/postgresql/data
+    hostname: postgres
+    restart: unless-stopped
+    volumes:
+      - dev-db-data:/var/lib/postgresql/data
     environment:
 #      For local development
       - POSTGRES_DB=app

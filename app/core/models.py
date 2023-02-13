@@ -58,7 +58,7 @@ class Recipe(models.Model):
     time_minutes = models.IntegerField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     link = models.CharField(max_length=255, blank=True)
-    kcal = models.IntegerField(default=None)
+    kcal = models.IntegerField(blank=True)
 
     def __str__(self):
         return self.title
